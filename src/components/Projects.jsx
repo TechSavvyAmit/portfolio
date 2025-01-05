@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
-import olova from "../assets/images/olova.png";
 import projectImage1 from "../assets/images/Fithub.png"; // Example for other projects
 import projectImage2 from "../assets/images/Chess_Master.png"; // Example for other projects
 import projectImage3 from "../assets/images/Sorting_algo_visual.png"; // Example for other projects
