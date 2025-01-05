@@ -12,24 +12,24 @@ const AboutMe = () => {
             Hi, I’m Amit—a dynamic full-stack developer passionate about
             building efficient, user-focused solutions. I specialize in modern
             web technologies, including{" "}
-            <a className="text-[#4ECCA3] px-2" href="https://olova.js.org/">
+            <a className="text-[#4ECCA3] px-2" >
               React
             </a>
             ,
-            <a className="text-[#4ECCA3] px-2" href="https://olova.js.org/">
+            <a className="text-[#4ECCA3] px-2">
               Node.js
             </a>
             , and{" "}
-            <a className="text-[#4ECCA3] px-2" href="https://olova.js.org/">
+            <a className="text-[#4ECCA3] px-2" >
               MongoDB
             </a>
             , creating seamless, scalable applications. My journey includes
             developing impactful projects like
-            <a className="text-[#4ECCA3] px-2" href="https://olova.js.org/">
+            <a className="text-[#4ECCA3] px-2">
               FitHub
             </a>
             , a fitness tracking platform empowering healthier lifestyles, and
-            <a className="text-[#4ECCA3] px-2" href="https://olova.js.org/">
+            <a className="text-[#4ECCA3] px-2">
               Chess Master
             </a>
             , a real-time multiplayer chess game bringing strategy to life. With
