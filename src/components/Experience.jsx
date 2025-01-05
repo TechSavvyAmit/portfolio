@@ -55,28 +55,16 @@ const ExperienceCard = ({
 const ExperienceSection = () => {
   const experiences = [
     {
-      icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
-      period: "2019 - 2020",
-      description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
-    },
-    {
       icon: Layers,
-      title: "Junior Frontend Developer",
-      company: "Sera Programmer",
-      period: "2021 - 2023",
-      description:
-        "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
-    },
-    {
-      icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
-      period: "2023 - Present",
-      description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+      title: "Zeetron Networks Pvt. Ltd.",
+      period: "01/2023 - 06/2023",
+      description: `
+    Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.
+    Developed responsive landing pages and a dynamic recipe search bar.
+    Built a temperature converter using JavaScript with error handling.
+    Optimized web content for user engagement and relevance.
+    Strengthened expertise in HTML, CSS, JavaScript, and responsive web design through hands-on projects.
+  `,
     },
   ];
 
@@ -102,8 +90,8 @@ const ExperienceSection = () => {
             <div className="animate-pulse mt-4 w-6 h-6 border-4 border-dashed border-cyan-400 rounded-full" />
           </div>
 
-          {/* Experience grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
+          {/* Experience grid centered */}
+          <div className="flex justify-center items-center space-x-8 max-w-6xl mx-auto">
             {experiences.map((exp, index) => (
               <ExperienceCard key={index} {...exp} />
             ))}
