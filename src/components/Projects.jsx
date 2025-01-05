@@ -1,11 +1,11 @@
 import React, { useState } from "react";
 import { Github, ExternalLink } from "lucide-react";
 import olova from "../assets/images/olova.png";
-import projectImage1 from "../assets/images/FitHub.png"; // Example for other projects
+import projectImage1 from "../assets/images/Fithub.png"; // Example for other projects
 import projectImage2 from "../assets/images/Chess_Master.png"; // Example for other projects
 import projectImage3 from "../assets/images/Sorting_algo_visual.png"; // Example for other projects
 import projectImage5 from "../assets/images/Simon_game.png"; // Example for other projects
-import projectImage4 from "../assets/images/XrFitSync.png"; // Example for other projects
+import projectImage4 from "../assets/images/xrFitSync.png"; // Example for other projects
 import projectImage6 from "../assets/images/Drum-Kit.png"; // Example for other projects
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 
