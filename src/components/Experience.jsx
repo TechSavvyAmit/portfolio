@@ -1,120 +1,258 @@
 import React from "react";
-import { Code2, Activity, Cpu, Layers, Network, Binary } from "lucide-react";
+import { motion } from "framer-motion";
+import { Rocket, BrainCircuit, Cpu, Stars, Sparkles } from "lucide-react";
 
 const ExperienceCard = ({
   title,
   company,
   period,
   description,
-  icon: Icon,
-}) => (
-  <div className="group relative overflow-hidden">
-    {/* Hexagon background pattern */}
-    <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZD0iTTAgMGwyMCAxMGwtMjAgMTB6IiBmaWxsPSIjMkQ0MjU2IiBmaWxsLW9wYWNpdHk9IjAuMiIvPjwvc3ZnPg==')] opacity-20" />
+  achievements,
+  index,
+}) => {
+  const colors = ["#3b82f6", "#10b981", "#8b5cf6"]; // Blue, Emerald, Purple
 
-    {/* Glowing border */}
-    <div className="absolute -inset-[1px] bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 rounded-lg opacity-0 group-hover:opacity-100 blur transition-all duration-500" />
+  return (
+    <motion.div
+      className="relative overflow-hidden rounded-2xl p-0.5"
+      initial={{ opacity: 0, y: 50 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.8, delay: index * 0.2 }}
+      viewport={{ once: true }}
+    >
+      {/* Animated gradient border */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-blue-500 via-emerald-500 to-purple-500 opacity-70 rounded-2xl"
+        animate={{
+          backgroundPosition: ["0% 50%", "100% 50%"],
+        }}
+        transition={{
+          duration: 8,
+          repeat: Infinity,
+          repeatType: "mirror",
+          ease: "linear",
+        }}
+      />
 
-    <div className="relative bg-gray-900 rounded-lg p-6 h-full border border-gray-800 shadow-lg transform group-hover:scale-105 transition-all duration-500 ease-in-out">
-      {/* Neon line accent */}
-      <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
+      {/* Card content */}
+      <div className="relative bg-gray-900 rounded-[15px] p-6 h-full">
+        {/* Floating particles */}
+        <motion.div
+          className="absolute top-4 right-4"
+          animate={{
+            y: [0, -5, 0],
+            rotate: [0, 10, 0],
+          }}
+          transition={{
+            duration: 4,
+            repeat: Infinity,
+            ease: "easeInOut",
+          }}
+        >
+          <Sparkles className="text-yellow-400" size={20} />
+        </motion.div>
 
-      {/* Icon with glow effect */}
-      <div className="relative mb-4">
-        <div className="absolute -inset-2 bg-blue-500 opacity-30 rounded-full blur-lg group-hover:opacity-70 transition-opacity" />
-        <Icon className="w-10 h-10 text-blue-400 relative z-10" />
-      </div>
+        <div className="flex items-start gap-4 mb-4">
+          <motion.div
+            className="p-3 rounded-full"
+            style={{ backgroundColor: `${colors[index]}20` }}
+            whileHover={{ scale: 1.1 }}
+          >
+            {index === 0 && <Rocket className={colors[index]} size={24} />}
+            {index === 1 && (
+              <BrainCircuit className={colors[index]} size={24} />
+            )}
+            {index === 2 && <Cpu className={colors[index]} size={24} />}
+          </motion.div>
 
-      {/* Content */}
-      <div className="space-y-2">
-        <h3 className="text-xl font-bold text-white group-hover:text-cyan-400 transition-colors">
-          {title}
-        </h3>
-        <div className="text-gray-400 flex justify-between items-center">
-          <span className="text-blue-400">{company}</span>
-          <span className="text-sm font-mono">{period}</span>
+          <div>
+            <motion.h3
+              className="text-xl font-bold text-white"
+              whileHover={{ x: 5 }}
+            >
+              {title}
+            </motion.h3>
+            <motion.div
+              className="flex gap-3 text-gray-400 mt-1"
+              whileHover={{ scale: 1.02 }}
+            >
+              <span>{company}</span>
+              <span>•</span>
+              <span>{period}</span>
+            </motion.div>
+          </div>
         </div>
-        <p className="text-gray-300 border-l-2 border-blue-500 pl-4 mt-4">
-          {description}
-        </p>
-      </div>
 
-      {/* Animated corner accents */}
-      <div className="absolute top-0 right-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute top-0 right-0 w-4 h-[2px] bg-cyan-500" />
-        <div className="absolute top-0 right-0 w-[2px] h-4 bg-cyan-500" />
+        <motion.p
+          className="text-gray-300 mb-4 pl-2 border-l-2"
+          style={{ borderColor: colors[index] }}
+          whileHover={{ paddingLeft: "1rem" }}
+        >
+          {description}
+        </motion.p>
+
+        {achievements && (
+          <motion.div
+            className="mt-4"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.4 }}
+          >
+            <motion.h4
+              className="text-sm font-semibold mb-2 flex items-center gap-2"
+              style={{ color: colors[index] }}
+              whileHover={{ scale: 1.02 }}
+            >
+              <Stars size={16} />
+              Key Achievements:
+            </motion.h4>
+            <ul className="space-y-2">
+              {achievements.map((item, i) => (
+                <motion.li
+                  key={i}
+                  className="text-gray-400 text-sm flex items-start gap-2"
+                  initial={{ x: -20 }}
+                  whileInView={{ x: 0 }}
+                  transition={{ delay: 0.1 * i }}
+                >
+                  <span className="text-yellow-400 mt-1">•</span>
+                  {item}
+                </motion.li>
+              ))}
+            </ul>
+          </motion.div>
+        )}
       </div>
-      <div className="absolute bottom-0 left-0 w-8 h-8 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-        <div className="absolute bottom-0 left-0 w-4 h-[2px] bg-purple-500" />
-        <div className="absolute bottom-0 left-0 w-[2px] h-4 bg-purple-500" />
-      </div>
-    </div>
-  </div>
-);
+    </motion.div>
+  );
+};
 
 const ExperienceSection = () => {
   const experiences = [
     {
-      icon: Network,
-      title: "WordPress Developer",
-      company: "Fiverr",
-      period: "2019 - 2020",
+      title: "Full Stack Developer",
+      company: "AIDEOA (Remote)",
+      period: "Oct 2024 - Present",
       description:
-        "Worked on developing and customizing WordPress websites for clients globally.",
+        "Crafting cutting-edge web applications with React, Node.js, and MongoDB that push the boundaries of user experience.",
+      achievements: [
+        "Engineered bulk export feature saving 15+ hours weekly",
+        "Integrated PayU processing 500+ transactions monthly",
+        "Boosted engagement 25% with interactive UI components",
+        "Automated emails reducing manual work by 30 hours/month",
+      ],
     },
     {
-      icon: Layers,
-      title: "Junior Frontend Developer",
-      company: "Sera Programmer",
-      period: "2021 - 2023",
+      title: "AI Engineer",
+      company: "Edunet Foundation",
+      period: "Dec 2024 - Jan 2025",
       description:
-        "Assisted in building and optimizing user interfaces with a focus on responsive and interactive designs.",
+        "Developed intelligent systems using machine learning to analyze and predict consumer behavior patterns.",
+      achievements: [
+        "Built shopping trend predictor with 92% accuracy",
+        "Trained custom NLP models for text classification",
+        "Optimized algorithms reducing processing time by 40%",
+        "Presented findings to industry expert panel",
+      ],
     },
     {
-      icon: Code2,
-      title: "JavaScript Developer",
-      company: "OlovJS (Sera Programmer)",
-      period: "2023 - Present",
+      title: "Web Developer",
+      company: "Zeetron Networks",
+      period: "Jan 2023 - Jun 2023",
       description:
-        "Contributed to developing JavaScript libraries and enhancing framework functionalities.",
+        "Transformed design concepts into high-performance websites with pixel-perfect responsiveness.",
+      achievements: [
+        "Developed 5+ landing pages with 98% mobile compatibility",
+        "Slashed load times by 40% through optimization",
+        "Increased organic traffic by 35% with SEO enhancements",
+        "Implemented CI/CD pipeline reducing deployment time",
+      ],
     },
   ];
 
   return (
-    <>
-      <div className="min-h-screen bg-gray-900 relative overflow-hidden">
-        {/* Animated background grid */}
-        <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTTAgMGg2MHY2MEgweiIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMkQ0MjU2IiBzdHJva2Utd2lkdGg9IjEiLz48L3BhdHRlcm4+PC9kZWZzPjxyZWN0IHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JpZCkiLz48L3N2Zz4=')] opacity-10" />
-
-        {/* Content container */}
-        <div className="relative container mx-auto px-4 py-24">
-          {/* Section header with cyber effect */}
-          <div className="flex flex-col items-center space-y-6 mb-16">
-            <div className="relative">
-              <h2 className="text-4xl md:text-6xl font-extrabold text-transparent bg-gradient-to-br from-indigo-400 via-purple-400 to-pink-500 bg-clip-text">
-                Professional Journey
-              </h2>
-              <div className="absolute inset-0 -z-10 bg-gradient-to-r from-purple-400/30 to-indigo-400/30 blur-xl rounded-xl" />
-            </div>
-            <p className="text-sm md:text-lg text-gray-400 font-medium italic tracking-wide">
-              "Crafting stories, one milestone at a time..."
-            </p>
-            <div className="animate-pulse mt-4 w-6 h-6 border-4 border-dashed border-cyan-400 rounded-full" />
-          </div>
-
-          {/* Experience grid */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto relative">
-            {experiences.map((exp, index) => (
-              <ExperienceCard key={index} {...exp} />
-            ))}
-          </div>
-        </div>
-
-        {/* Glowing orbs background effect */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-blue-500/20 rounded-full filter blur-3xl animate-pulse" />
-        <div className="absolute bottom-0 right-0 w-96 h-96 bg-purple-500/20 rounded-full filter blur-3xl animate-pulse delay-700" />
+    <div className="relative bg-gray-900 py-20 px-4 overflow-hidden">
+      {/* Cosmic background elements */}
+      <div className="absolute inset-0 overflow-hidden">
+        {[...Array(20)].map((_, i) => (
+          <motion.div
+            key={i}
+            className="absolute rounded-full bg-white"
+            style={{
+              width: `${Math.random() * 3 + 1}px`,
+              height: `${Math.random() * 3 + 1}px`,
+              top: `${Math.random() * 100}%`,
+              left: `${Math.random() * 100}%`,
+              opacity: 0.7,
+            }}
+            animate={{
+              y: [0, -100],
+              opacity: [0.2, 0.8, 0],
+            }}
+            transition={{
+              duration: Math.random() * 10 + 10,
+              repeat: Infinity,
+              delay: Math.random() * 5,
+            }}
+          />
+        ))}
       </div>
-    </>
+
+      {/* Content container */}
+      <div className="relative max-w-6xl mx-auto z-10">
+        {/* Section header */}
+        <motion.div
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: -30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div
+            className="inline-block mb-4"
+            whileHover={{ rotate: 360 }}
+            transition={{ duration: 1 }}
+          >
+            <Stars className="text-yellow-400" size={40} />
+          </motion.div>
+          <motion.h2
+            className="text-4xl md:text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-blue-400 via-emerald-400 to-purple-400 mb-4"
+            initial={{ letterSpacing: "0px" }}
+            whileInView={{ letterSpacing: "2px" }}
+            transition={{ duration: 0.5 }}
+          >
+            Cosmic Career Journey
+          </motion.h2>
+          <motion.p
+            className="text-gray-400 max-w-2xl mx-auto text-lg"
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+          >
+            "Launching digital innovations that orbit beyond expectations"
+          </motion.p>
+        </motion.div>
+
+        {/* Experience cards */}
+        <motion.div
+          className="grid gap-8 md:grid-cols-2 lg:grid-cols-3"
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.2,
+              },
+            },
+          }}
+        >
+          {experiences.map((exp, index) => (
+            <ExperienceCard key={index} index={index} {...exp} />
+          ))}
+        </motion.div>
+      </div>
+    </div>
   );
 };
 
