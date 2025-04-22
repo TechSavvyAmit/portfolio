@@ -71,43 +71,50 @@ export default function Hero() {
   const [code] = useState(`
 class Profile {
 public:
-    /* Personal Info */
-    string name = "Amit";
-    string role = "Full-Stack Developer";
+    /* Personal Information */
+    std::string name = "Amit";
+    std::string role = "Full-Stack Developer";
     
     /* Technical Skills */
-    vector<string> skills = {
+    std::vector<std::string> skills = {
         "React", "Next.js", "Node.js", "TypeScript",
-        "MongoDB", "Express", "Python", "DSA"
+        "MongoDB", "Express.js", "Python", "DSA", "C++", "JavaScript"
     };
-    
-    /* Experience */
+
+    /* Experience Structure */
     struct Experience {
-        string company;
-        string position;
-        string duration;
+        std::string company;
+        std::string position;
+        std::string duration;
     };
-    
-    vector<Experience> experiences = {
+
+    /* Professional Experience */
+    std::vector<Experience> experiences = {
         {
             "AIDEOA", 
             "Full Stack Developer (Remote)", 
-            "Oct 2024 - Present"
+            "Oct 2024 - April 2025"
         },
         {
             "Edunet Foundation", 
             "AI Intern", 
             "Dec 2024 - Jan 2025"
+        },
+        {
+            "Zeetron Networks", 
+            "Web Trainee", 
+            "Jan 2023 - Jun 2023"
         }
     };
-    
-    /* Attributes */
+
+    /* Personal Attributes */
     bool hardWorker = true;
     bool quickLearner = true;
-    int totalExperience = 1; // years
+    int internships = experiences.size();
     
-    bool isHireable() {
-        return hardWorker && !experiences.empty();
+    /* Eligibility */
+    bool isHireable() const {
+        return hardWorker && quickLearner && !experiences.empty();
     }
 };
 `);
@@ -325,13 +332,13 @@ public:
                       transition={{ duration: 2, repeat: Infinity }}
                       className="inline-block mr-2"
                     >
-                      💻
+                      👨‍💻
                     </motion.span>
-                    Passionate about solving complex problems with{" "}
+                    Electronics Engineer turned{" "}
                     <span className="font-bold underline decoration-emerald-400">
-                      clean & efficient
+                      Full Stack Developer
                     </span>{" "}
-                    code
+                    with a deep love for code
                   </motion.span>
                   <br />
                   <motion.span
@@ -344,14 +351,22 @@ public:
                       transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
                       className="inline-block mr-2"
                     >
-                      🚀
+                      🔧
                     </motion.span>
-                    Creator of{" "}
-                    <span className="font-bold text-amber-300">FitHub</span> and{" "}
+                    Built projects like{" "}
+                    <span className="font-bold text-amber-300">HackFusion</span>
+                    ,{" "}
+                    <span className="font-bold text-amber-300">
+                      Sorting Visualizer
+                    </span>{" "}
+                    , <span className="font-bold text-amber-300">FitHUb</span> ,{" "}
                     <span className="font-bold text-amber-300">
                       Chess Master
                     </span>{" "}
-                    - innovative digital solutions
+                    &{" "}
+                    <span className="font-bold text-amber-300">
+                      Shopping Trend Analyzer
+                    </span>
                   </motion.span>
                   <br />
                   <motion.span
@@ -368,11 +383,14 @@ public:
                       }}
                       className="inline-block mr-2"
                     >
-                      🤓
+                      📚
                     </motion.span>
-                    <span className="font-bold">DSA enthusiast</span> |{" "}
-                    <span className="text-cyan-300">OOPs</span> practitioner |{" "}
-                    <span className="text-fuchsia-400">Tech explorer</span>
+                    <span className="font-bold">DSA lover</span> with 500+
+                    problems solved | Fluent in{" "}
+                    <span className="text-cyan-300">C++, JS, Python</span> |{" "}
+                    <span className="text-fuchsia-400">
+                      Frontend + Backend wizard
+                    </span>
                   </motion.span>
                   <br />
                   <motion.span
@@ -385,10 +403,12 @@ public:
                       transition={{ duration: 1.5, repeat: Infinity }}
                       className="inline-block mr-2"
                     >
-                      🌐
+                      🌍
                     </motion.span>
-                    Always <span className="italic">learning</span>, always{" "}
-                    <span className="italic">evolving</span>{" "}
+                    Interned at{" "}
+                    <span className="font-bold text-green-300">AIDEOA</span> &{" "}
+                    <span className="font-bold text-green-300">Zeetron</span> |
+                    Constantly growing through real-world projects
                     <motion.span
                       animate={{ opacity: [0.3, 1, 0.3] }}
                       transition={{ duration: 2, repeat: Infinity }}
@@ -397,14 +417,45 @@ public:
                       ✨
                     </motion.span>
                   </motion.span>
+                  <motion.span
+                    className="inline-block bg-gradient-to-r from-amber-300 to-yellow-500 bg-clip-text text-transparent mt-2"
+                    whileHover={{ scale: 1.03 }}
+                    transition={{ type: "spring", stiffness: 300, delay: 0.1 }}
+                  >
+                    <motion.span
+                      animate={{ y: [0, -5, 0] }}
+                      transition={{ duration: 2, repeat: Infinity, delay: 0.5 }}
+                      className="inline-block mr-2"
+                    >
+                      🛠️
+                    </motion.span>
+                    Collaborated on{" "}
+                    <span className="font-bold text-amber-300">Hackfusion</span>{" "}
+                    — a complete{" "}
+                    <span className="underline decoration-yellow-400">
+                      SEO-optimized IT solution
+                    </span>{" "}
+                    built with{" "}
+                    <span className="font-bold">React, Next.js & Node.js</span>.
+                    Boosted organic traffic by{" "}
+                    <span className="font-bold text-yellow-400">40%</span> and
+                    automated{" "}
+                    <span className="font-bold">40% of user queries</span> via
+                    chatbot.
+                  </motion.span>
                 </p>
 
                 {/* Animated underline effect */}
                 <motion.div
-                  className="absolute bottom-0 left-0 h-0.5 bg-gradient-to-r from-blue-400 to-purple-500 w-0"
-                  whileInView={{ width: "100%" }}
+                  className="absolute bottom-[-20px] left-0 h-1 rounded-full bg-gradient-to-r from-blue-400 via-purple-500 to-pink-500 w-0 shadow-md shadow-purple-400"
+                  initial={{ width: 0, opacity: 0, x: -50 }}
+                  whileInView={{ width: "100%", opacity: 1, x: 0 }}
                   viewport={{ once: true }}
-                  transition={{ duration: 1, delay: 0.5 }}
+                  transition={{
+                    duration: 1.2,
+                    ease: "easeInOut",
+                    delay: 0.4,
+                  }}
                 />
               </motion.div>
 

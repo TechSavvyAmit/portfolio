@@ -29,3 +29,55 @@
   z-index: -1;
   animation: elasticBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
 }
+
+/* Custom Cursor Styles */
+.cursor {
+  position: fixed;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #60a5fa, #34d399);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  mix-blend-mode: difference;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+.cursor-follower {
+  position: fixed;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(96, 165, 250, 0.2);
+  border: 1px solid rgba(52, 211, 153, 0.5);
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  z-index: 9998;
+  transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
+}
+
+.cursor-active {
+  transform: translate(-50%, -50%) scale(1.5);
+  background: rgba(96, 165, 250, 0.4);
+}
+
+.cursor-follower-active {
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(52, 211, 153, 0.3);
+}
+
+/* Interactive elements that affect cursor */
+.cursor-hover {
+  position: relative;
+}
+
+.cursor-hover:hover ~ .cursor {
+  transform: translate(-50%, -50%) scale(1.5);
+}
+
+.cursor-hover:hover ~ .cursor-follower {
+  transform: translate(-50%, -50%) scale(0.8);
+  width: 30px;
+  height: 30px;
+}

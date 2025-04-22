@@ -8,16 +8,16 @@ import Education from "./components/Education";
 import Contact from "./components/Contact";
 import Projects from "./components/Projects";
 import { Route, Routes } from "react-router-dom";
+import CustomCursor from "./components/CustomCursor"; // Add this import
 
 export default function App() {
-  const [isOnePage, setIsOnePage] = useState(false); // Toggle state
+  const [isOnePage, setIsOnePage] = useState(false);
 
   return (
     <>
+      <CustomCursor /> {/* Add this line */}
       <Header />
-      {/* Conditional Rendering */}
       {isOnePage ? (
-        // One-Page Mode: Render all components together
         <>
           <Hero />
           <Skills />
@@ -26,7 +26,6 @@ export default function App() {
           <Contact />
         </>
       ) : (
-        // Router Mode: Use routes for navigation
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/skills" element={<Skills />} />

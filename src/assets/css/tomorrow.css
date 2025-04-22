@@ -1,15 +1,16 @@
 code[class*="language-"],
 pre[class*="language-"] {
-  color: #ccc;
-  background: 0 0;
-  font-family: Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
-  font-size: 1em;
+  color: #e0e0e0;
+  background: #0a192f;
+  font-family: "Fira Code", "Consolas", "Monaco", "Andale Mono", "Ubuntu Mono",
+    monospace;
+  font-size: 0.95em;
   text-align: left;
   white-space: pre;
   word-spacing: normal;
   word-break: normal;
   word-wrap: normal;
-  line-height: 1.5;
+  line-height: 1.6;
   -moz-tab-size: 4;
   -o-tab-size: 4;
   tab-size: 4;
@@ -17,80 +18,212 @@ pre[class*="language-"] {
   -moz-hyphens: none;
   -ms-hyphens: none;
   hyphens: none;
+
+  /* Modern enhancements */
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
 }
+
+/* Add subtle animation to code blocks */
 pre[class*="language-"] {
-  padding: 1em;
-  margin: 0.5em 0;
+  padding: 1.5em;
+  margin: 1em 0;
   overflow: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-:not(pre) > code[class*="language-"],
-pre[class*="language-"] {
-  background: #091121;
+
+pre[class*="language-"]:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
 }
+
+/* Add a subtle gradient border effect */
+pre[class*="language-"]::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #60a5fa, #34d399);
+}
+
+/* Inline code */
 :not(pre) > code[class*="language-"] {
-  padding: 0.1em;
+  padding: 0.2em 0.4em;
   border-radius: 0.3em;
   white-space: normal;
+  background: rgba(10, 25, 47, 0.7);
+  color: #f8f8f2;
+  font-size: 0.9em;
+  transition: all 0.2s ease;
 }
-.token.block-comment,
-.token.cdata,
+
+:not(pre) > code[class*="language-"]:hover {
+  background: rgba(10, 25, 47, 0.9);
+  transform: translateY(-1px);
+}
+
+/* Syntax highlighting colors with better contrast */
 .token.comment,
+.token.block-comment,
+.token.prolog,
 .token.doctype,
-.token.prolog {
-  color: #999;
+.token.cdata {
+  color: #6a9955;
+  font-style: italic;
 }
+
 .token.punctuation {
-  color: #ccc;
+  color: #d4d4d4;
+  opacity: 0.8;
 }
+
+.token.tag,
 .token.attr-name,
-.token.deleted,
 .token.namespace,
-.token.tag {
-  color: #e2777a;
+.token.deleted {
+  color: #569cd6;
 }
+
 .token.function-name {
-  color: #6196cc;
+  color: #dcdcaa;
 }
+
 .token.boolean,
-.token.function,
-.token.number {
-  color: #f08d49;
+.token.number,
+.token.function {
+  color: #b5cea8;
 }
+
+.token.property,
 .token.class-name,
 .token.constant,
-.token.property,
 .token.symbol {
   color: #f8c555;
+  text-shadow: 0 0 2px rgba(248, 197, 85, 0.3);
 }
-.token.atrule,
-.token.builtin,
+
+.token.selector,
 .token.important,
+.token.atrule,
 .token.keyword,
-.token.selector {
-  color: #cc99cd;
+.token.builtin {
+  color: #c586c0;
 }
-.token.attr-value,
-.token.char,
-.token.regex,
+
 .token.string,
+.token.char,
+.token.attr-value,
+.token.regex,
 .token.variable {
-  color: #7ec699;
+  color: #ce9178;
 }
-.token.entity,
+
 .token.operator,
+.token.entity,
 .token.url {
-  color: #67cdcc;
+  color: #d4d4d4;
 }
-.token.bold,
-.token.important {
-  font-weight: 700;
+
+.token.important,
+.token.bold {
+  font-weight: bold;
 }
+
 .token.italic {
   font-style: italic;
 }
+
 .token.entity {
   cursor: help;
 }
+
 .token.inserted {
-  color: green;
+  color: #b5cea8;
+  background: rgba(100, 255, 100, 0.05);
+}
+
+.token.deleted {
+  background: rgba(255, 100, 100, 0.05);
+}
+
+/* Line highlighting */
+.line-highlight {
+  background: rgba(233, 213, 255, 0.1);
+  border-left: 3px solid #60a5fa;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+}
+
+/* Line numbers */
+.line-numbers .line-numbers-rows {
+  border-right: 1px solid rgba(96, 165, 250, 0.2);
+}
+
+.line-numbers-rows > span:before {
+  color: rgba(96, 165, 250, 0.5);
+}
+
+/* Copy button styling */
+.code-copy-btn {
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  background: rgba(96, 165, 250, 0.1);
+  border: 1px solid rgba(96, 165, 250, 0.3);
+  color: #60a5fa;
+  border-radius: 0.25rem;
+  padding: 0.25rem 0.5rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  opacity: 0;
+}
+
+pre[class*="language-"]:hover .code-copy-btn {
+  opacity: 1;
+}
+
+.code-copy-btn:hover {
+  background: rgba(96, 165, 250, 0.2);
+  transform: translateY(-1px);
+}
+
+.code-copy-btn:active {
+  transform: translateY(0);
+}
+
+/* Tooltip for copy button */
+.code-copy-btn::after {
+  content: "Copied!";
+  position: absolute;
+  top: -2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #60a5fa;
+  color: white;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.code-copy-btn.copied::after {
+  opacity: 1;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  pre[class*="language-"] {
+    font-size: 0.85em;
+    padding: 1em;
+  }
+
+  .code-copy-btn {
+    opacity: 1; /* Always show on mobile */
+  }
 }

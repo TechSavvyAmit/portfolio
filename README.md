@@ -10,8 +10,6 @@ From coding challenges to real-world projects, I've poured my expertise into eve
 
 ## 🚀 Live Demo
 
-![Portfolio Demo](https://github.com/TechSavvyAmit/portfolio/blob/main/src/assets/images/portfolio_demo.png)
-
 - **Check out the live version:**  
   [**Live Demo**](https://portfolio-techsavvyamits-projects.vercel.app/)
 

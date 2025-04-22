@@ -8,7 +8,9 @@ import {
   Code,
   Palette,
   Gamepad2,
+  Stars,
 } from "lucide-react";
+import projectImage0 from "../assets/images/hackfusion.png";
 import projectImage1 from "../assets/images/Fithub.webp";
 import projectImage2 from "../assets/images/Chess_Master.webp";
 import projectImage3 from "../assets/images/Sorting_algo_visual.webp";
@@ -17,6 +19,26 @@ import projectImage4 from "../assets/images/xrFitSync.webp";
 import projectImage6 from "../assets/images/Drum-Kit.webp";
 
 const projectsData = [
+  {
+    title: "Hackfusion",
+    description:
+      "A collaborative IT solutions hub built with a dynamic team, Hackfusion delivers SEO-optimized websites, modern UI/UX design, and full-stack development. The project boosted organic reach by 40% and automated 40% of user queries via an integrated chatbot—showcasing the power of seamless teamwork and tech innovation.",
+    tags: [
+      "React",
+      "Next.js",
+      "Tailwind",
+      "Node.js",
+      "Team Project",
+      "SEO",
+      "Chatbot",
+    ],
+    links: {
+      demo: "https://www.hackfusion.in/",
+    },
+    image: projectImage0,
+    icon: <Stars className="w-5 h-5 text-yellow-400" />,
+    featured: false,
+  },
   {
     title: "FitHub",
     description:

@@ -132,7 +132,7 @@ const ExperienceSection = () => {
     {
       title: "Full Stack Developer",
       company: "AIDEOA (Remote)",
-      period: "Oct 2024 - Present",
+      period: "Oct 2024 - April 2025",
       description:
         "Crafting cutting-edge web applications with React, Node.js, and MongoDB that push the boundaries of user experience.",
       achievements: [
@@ -152,7 +152,6 @@ const ExperienceSection = () => {
         "Built shopping trend predictor with 92% accuracy",
         "Trained custom NLP models for text classification",
         "Optimized algorithms reducing processing time by 40%",
-        "Presented findings to industry expert panel",
       ],
     },
     {
@@ -162,9 +161,8 @@ const ExperienceSection = () => {
       description:
         "Transformed design concepts into high-performance websites with pixel-perfect responsiveness.",
       achievements: [
-        "Developed 5+ landing pages with 98% mobile compatibility",
+        "Developed 2+ landing pages with 70% mobile compatibility",
         "Slashed load times by 40% through optimization",
-        "Increased organic traffic by 35% with SEO enhancements",
         "Implemented CI/CD pipeline reducing deployment time",
       ],
     },

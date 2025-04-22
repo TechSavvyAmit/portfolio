@@ -100,7 +100,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      value: "amitk704200@gmail.com",
+      value: "nitkkr.amit07@gmail.com",
       color: "purple",
     },
     {
