@@ -223,6 +223,41 @@ const ExperienceSection = () => {
             />
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+          className="
+                    mt-20
+                    grid
+                    grid-cols-2
+                    md:grid-cols-4
+                    gap-6
+                  "
+        >
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">7.68</h3>
+            <p className="text-slate-400 mt-2">CGPA</p>
+          </div>
+
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">500+</h3>
+            <p className="text-slate-400 mt-2">DSA Problems</p>
+          </div>
+
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">22+</h3>
+            <p className="text-slate-400 mt-2">Projects</p>
+          </div>
+
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">4</h3>
+            <p className="text-slate-400 mt-2">Professional Experiences</p>
+          </div>
+        </motion.div>
+
       </div>
     </section>
   );

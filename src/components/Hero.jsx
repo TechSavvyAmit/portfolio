@@ -300,7 +300,7 @@ public:
 
                 <div className="p-4 rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm">
                   <h3 className="text-3xl font-bold text-cyan-400">
-                    25+
+                    22+
                   </h3>
                   <p className="text-sm text-slate-400">
                     Projects
@@ -309,10 +309,10 @@ public:
 
                 <div className="p-4 rounded-2xl border border-slate-800 bg-slate-900/50 backdrop-blur-sm">
                   <h3 className="text-3xl font-bold text-cyan-400">
-                    3
+                    4
                   </h3>
                   <p className="text-sm text-slate-400">
-                    Internships
+                    Professional Experiences
                   </p>
                 </div>
               </motion.div>
