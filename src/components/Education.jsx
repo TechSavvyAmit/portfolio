@@ -1,220 +1,229 @@
-import React, { useState } from "react";
+import React from "react";
 import { motion } from "framer-motion";
 import {
-  Star,
-  Award,
-  Calendar,
   GraduationCap,
   BookOpen,
   School,
 } from "lucide-react";
 
 const EducationSection = () => {
-  const [hoveredIndex, setHoveredIndex] = useState(null);
-
   const educationData = [
     {
-      degree: "Secondary School Certificate (SSC)",
-      school: "Arqam Academy Sr. Sec. School",
-      mascot: "📘",
-      achievements: [
-        "Scored 76% in CBSE Board Exams",
-        "Specialized in Science Stream",
-        "Active participant in science fairs",
-      ],
-      duration: "2016 - 2017",
-      icon: School,
-    },
-    {
-      degree: "Higher Secondary Certificate (HSC)",
-      school: "Rattan Convent School",
-      mascot: "📗",
-      achievements: [
-        "Achieved 78% in CBSE Board Exams",
-        "Specialized in Physics, Chemistry, Maths",
-        "Won inter-school quiz competitions",
-      ],
-      duration: "2018 - 2019",
-      icon: BookOpen,
-    },
-    {
       degree: "Bachelor of Technology (ECE)",
-      school: "National Institute of Technology, Kurukshetra",
-      mascot: "🎓",
-      achievements: [
-        "CGPA: 7.68/10",
-        "Specialized in Electronics & Communication",
-        "Coursework in AI/ML, Computer Networks",
-        "Active in technical clubs and hackathons",
-      ],
-      duration: "2020 - 2024",
+      institute: "National Institute of Technology, Kurukshetra",
+      duration: "2021 - 2025",
+      score: "CGPA: 7.68 / 10",
       icon: GraduationCap,
+      highlights: [
+        "Data Structures & Algorithms",
+        "Computer Networks",
+        "Operating Systems",
+        "Artificial Intelligence & Machine Learning",
+      ],
+    },
+
+    {
+      degree: "Higher Secondary Education (CBSE)",
+      institute: "Rattan Convent School",
+      duration: "2018 - 2020",
+      score: "78%",
+      icon: BookOpen,
+      highlights: [
+        "Physics",
+        "Chemistry",
+        "Mathematics",
+        "Academic Excellence",
+      ],
+    },
+
+    {
+      degree: "Secondary Education (CBSE)",
+      institute: "Arqam Academy Sr. Sec. School",
+      duration: "2016 - 2018",
+      score: "76%",
+      icon: School,
+      highlights: [
+        "Science Stream",
+        "Strong Academic Foundation",
+        "Leadership & Team Activities",
+      ],
     },
   ];
 
   return (
-    <section className="min-h-screen bg-[#0f1629] py-20 relative overflow-hidden">
-      {/* Floating particles background */}
+    <section
+      id="education"
+      className="py-20 bg-[#020617] relative overflow-hidden"
+    >
+      {/* Background Glow */}
+
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {[...Array(30)].map((_, i) => (
-          <motion.div
-            key={i}
-            className="absolute rounded-full bg-blue-500/10"
-            style={{
-              width: `${Math.random() * 6 + 2}px`,
-              height: `${Math.random() * 6 + 2}px`,
-              top: `${Math.random() * 100}%`,
-              left: `${Math.random() * 100}%`,
-            }}
-            animate={{
-              y: [0, -100],
-              opacity: [0.2, 0.8, 0],
-              scale: [1, 1.5, 1],
-            }}
-            transition={{
-              duration: Math.random() * 10 + 10,
-              repeat: Infinity,
-              delay: Math.random() * 5,
-            }}
-          />
-        ))}
+        <div className="absolute top-20 left-20 w-80 h-80 bg-cyan-500/10 rounded-full blur-[120px]" />
+
+        <div className="absolute bottom-20 right-20 w-80 h-80 bg-purple-500/10 rounded-full blur-[120px]" />
       </div>
 
-      <div className="max-w-6xl mx-auto px-4 relative z-10">
-        {/* Section header */}
+      <div className="max-w-7xl mx-auto px-6 relative z-10">
+        {/* Header */}
+
         <motion.div
-          className="text-center mb-16"
-          initial={{ opacity: 0, y: -50 }}
+          initial={{ opacity: 0, y: 30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
+          transition={{ duration: 0.6 }}
+          viewport={{ once: true }}
+          className="text-center mb-20"
         >
-          <motion.div
-            className="inline-flex items-center justify-center mb-4"
-            whileHover={{ scale: 1.1 }}
+          <span
+            className="
+              px-4 py-2
+              rounded-full
+              border border-cyan-500/20
+              bg-cyan-500/5
+              text-cyan-400
+              text-sm
+              font-medium
+            "
           >
-            <GraduationCap className="w-10 h-10 text-blue-400 mr-3" />
-            <h2 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-blue-400 to-teal-400 bg-clip-text text-transparent">
-              Academic Journey
-            </h2>
-          </motion.div>
-          <motion.p
-            className="text-gray-400 max-w-2xl mx-auto text-lg"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            transition={{ delay: 0.3 }}
-          >
-            "Building foundations for technological excellence through dedicated
-            learning"
-          </motion.p>
+            Education
+          </span>
+
+          <h2 className="mt-6 text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+            Academic Background
+          </h2>
+
+          <p className="mt-6 text-slate-400 text-lg max-w-3xl mx-auto">
+            Focused on core engineering principles, advanced algorithmic problem-solving, and full-stack software development through rigorous coursework and practical project execution
+          </p>
         </motion.div>
 
-        {/* Education timeline */}
-        <div className="space-y-8 relative">
-          {/* Vertical line */}
-          <div className="absolute left-8 top-0 h-full w-0.5 bg-gradient-to-b from-blue-500/20 via-teal-500/50 to-purple-500/20 z-0"></div>
+        {/* Cards */}
 
-          {educationData.map((edu, index) => (
-            <motion.div
-              key={index}
-              className="relative z-10"
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.15 }}
-            >
-              {/* Year marker */}
-              <motion.div
-                className="absolute left-0 w-16 h-16 rounded-full bg-gradient-to-br from-blue-500 to-teal-500 flex items-center justify-center text-white font-bold shadow-lg -translate-x-1/2"
-                whileHover={{ scale: 1.1 }}
-              >
-                {edu.duration.split(" ")[0]}
-              </motion.div>
+        <div className="grid lg:grid-cols-3 gap-8">
+          {educationData.map((edu, index) => {
+            const Icon = edu.icon;
 
-              {/* Education card */}
+            return (
               <motion.div
-                className={`ml-24 relative group rounded-xl transition-all duration-500 overflow-hidden ${
-                  hoveredIndex === index ? "shadow-xl" : "shadow-lg"
-                }`}
-                onMouseEnter={() => setHoveredIndex(index)}
-                onMouseLeave={() => setHoveredIndex(null)}
-                whileHover={{ y: -5 }}
+                key={index}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{
+                  duration: 0.5,
+                  delay: index * 0.15,
+                }}
+                viewport={{ once: true }}
+                whileHover={{
+                  y: -10,
+                }}
+                className="
+                  group
+                  bg-slate-900/70
+                  backdrop-blur-xl
+                  border
+                  border-slate-800
+                  rounded-3xl
+                  p-8
+                  hover:border-cyan-500/40
+                  transition-all
+                  duration-300
+                "
               >
-                {/* Gradient border */}
+                {/* Icon */}
+
                 <div
-                  className={`absolute inset-0 bg-gradient-to-r rounded-xl ${
-                    hoveredIndex === index
-                      ? "from-blue-500 via-teal-500 to-purple-500 opacity-30"
-                      : "from-blue-500/10 via-teal-500/10 to-purple-500/10 opacity-20"
-                  }`}
-                ></div>
+                  className="
+                    w-16 h-16
+                    rounded-2xl
+                    bg-cyan-500/10
+                    flex
+                    items-center
+                    justify-center
+                    mb-6
+                    group-hover:bg-cyan-500/20
+                    transition-all
+                  "
+                >
+                  <Icon className="w-8 h-8 text-cyan-400" />
+                </div>
 
-                {/* Card content */}
-                <div className="relative bg-[#0f1629] p-8">
-                  {/* Degree title */}
-                  <div className="flex items-start gap-4 mb-4">
-                    <motion.div
-                      className="p-3 rounded-full"
-                      style={{ backgroundColor: "rgba(16, 185, 129, 0.1)" }}
-                      whileHover={{ rotate: 15 }}
+                {/* Degree */}
+
+                <h3 className="text-xl font-bold text-white mb-3 leading-snug">
+                  {edu.degree}
+                </h3>
+
+                {/* Institute */}
+
+                <p className="text-cyan-400 font-medium mb-4">
+                  {edu.institute}
+                </p>
+
+                {/* Duration & Score */}
+
+                <div className="flex justify-between items-center text-sm text-slate-400 border-b border-slate-800 pb-4 mb-6">
+                  <span>{edu.duration}</span>
+                  <span>{edu.score}</span>
+                </div>
+
+                {/* Highlights */}
+
+                <div className="space-y-4">
+                  {edu.highlights.map((item, i) => (
+                    <div
+                      key={i}
+                      className="
+                        flex
+                        items-start
+                        gap-3
+                        text-slate-300
+                        text-sm
+                      "
                     >
-                      <edu.icon className="w-6 h-6 text-teal-400" />
-                    </motion.div>
-                    <div>
-                      <motion.h3
-                        className="text-xl font-bold text-white"
-                        whileHover={{ x: 5 }}
-                      >
-                        {edu.degree}
-                      </motion.h3>
-                      <motion.p
-                        className="text-teal-400 flex items-center gap-2 mt-1"
-                        whileHover={{ scale: 1.02 }}
-                      >
-                        <Star className="w-4 h-4" />
-                        {edu.school}
-                      </motion.p>
+                      <div className="w-2 h-2 rounded-full bg-cyan-400 mt-2" />
+                      <span>{item}</span>
                     </div>
-                  </div>
-
-                  {/* Duration */}
-                  <motion.div
-                    className="flex items-center gap-2 text-gray-400 text-sm mb-4"
-                    whileHover={{ scale: 1.02 }}
-                  >
-                    <Calendar className="w-4 h-4" />
-                    <span>{edu.duration}</span>
-                  </motion.div>
-
-                  {/* Achievements */}
-                  <motion.div
-                    className="mt-4"
-                    initial={{ opacity: 0 }}
-                    whileInView={{ opacity: 1 }}
-                    transition={{ delay: 0.4 }}
-                  >
-                    <h4 className="text-sm font-semibold text-blue-400 mb-2 flex items-center gap-2">
-                      <Award className="w-4 h-4" />
-                      Key Achievements:
-                    </h4>
-                    <ul className="space-y-2">
-                      {edu.achievements.map((item, i) => (
-                        <motion.li
-                          key={i}
-                          className="text-gray-300 text-sm flex items-start gap-2"
-                          initial={{ x: -20 }}
-                          whileInView={{ x: 0 }}
-                          transition={{ delay: 0.1 * i }}
-                        >
-                          <span className="text-teal-400 mt-1">▹</span>
-                          {item}
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </motion.div>
+                  ))}
                 </div>
               </motion.div>
-            </motion.div>
-          ))}
+            );
+          })}
         </div>
+
+        {/* Bottom Achievement Strip */}
+
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.4 }}
+          viewport={{ once: true }}
+          className="
+            mt-20
+            grid
+            grid-cols-2
+            md:grid-cols-4
+            gap-6
+          "
+        >
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">7.68</h3>
+            <p className="text-slate-400 mt-2">CGPA</p>
+          </div>
+
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">500+</h3>
+            <p className="text-slate-400 mt-2">DSA Problems</p>
+          </div>
+
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">10+</h3>
+            <p className="text-slate-400 mt-2">Projects</p>
+          </div>
+
+          <div className="bg-slate-900/60 border border-slate-800 rounded-2xl p-6 text-center">
+            <h3 className="text-3xl font-bold text-cyan-400">3</h3>
+            <p className="text-slate-400 mt-2">Internships</p>
+          </div>
+        </motion.div>
       </div>
     </section>
   );

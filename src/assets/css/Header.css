@@ -1,83 +1,230 @@
-@keyframes elasticBounce {
-  0% {
-    transform: scale(0.8);
-  }
-  40% {
-    transform: scale(1.15, 0.95);
-  }
-  60% {
-    transform: scale(0.95, 1.05);
-  }
-  80% {
-    transform: scale(1.05, 0.95);
-  }
-  100% {
-    transform: scale(1);
-  }
-}
+/* ==================================================
+   PREMIUM CORPORATE HEADER
+================================================== */
 
-.elastic-bounce {
-  animation: elasticBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.nav-link:hover::before {
-  content: "";
-  position: absolute;
-  inset: -4px;
-  background: rgba(233, 213, 255, 0.3);
-  border-radius: 9999px;
-  z-index: -1;
-  animation: elasticBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-/* Custom Cursor Styles */
-.cursor {
+.header {
   position: fixed;
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  background: linear-gradient(45deg, #60a5fa, #34d399);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  mix-blend-mode: difference;
-  z-index: 9999;
-  transition: transform 0.2s ease;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+
+  z-index: 999;
+
+  transition: all 0.35s ease;
 }
 
-.cursor-follower {
-  position: fixed;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  background: rgba(96, 165, 250, 0.2);
-  border: 1px solid rgba(52, 211, 153, 0.5);
-  transform: translate(-50%, -50%);
-  pointer-events: none;
-  z-index: 9998;
-  transition: transform 0.4s ease, width 0.3s ease, height 0.3s ease;
+.header-scrolled {
+  backdrop-filter: blur(20px);
+
+  background: rgba(5, 8, 22, 0.85);
+
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.25);
 }
 
-.cursor-active {
-  transform: translate(-50%, -50%) scale(1.5);
-  background: rgba(96, 165, 250, 0.4);
+.header-container {
+  max-width: 1350px;
+
+  margin: auto;
+
+  padding: 18px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
 }
 
-.cursor-follower-active {
-  transform: translate(-50%, -50%) scale(0.8);
-  background: rgba(52, 211, 153, 0.3);
+/* ==========================
+   LOGO
+========================== */
+
+.logo {
+  font-size: 1.8rem;
+
+  font-weight: 800;
+
+  text-decoration: none;
+
+  color: white;
+
+  letter-spacing: 1px;
 }
 
-/* Interactive elements that affect cursor */
-.cursor-hover {
-  position: relative;
+.logo span {
+  background: linear-gradient(135deg,
+      #38bdf8,
+      #818cf8,
+      #34d399);
+
+  -webkit-background-clip: text;
+
+  -webkit-text-fill-color: transparent;
 }
 
-.cursor-hover:hover ~ .cursor {
-  transform: translate(-50%, -50%) scale(1.5);
+/* ==========================
+   NAVIGATION
+========================== */
+
+.desktop-nav {
+  display: flex;
+
+  gap: 10px;
 }
 
-.cursor-hover:hover ~ .cursor-follower {
-  transform: translate(-50%, -50%) scale(0.8);
-  width: 30px;
-  height: 30px;
+.nav-link {
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  padding: 12px 18px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  color: #94a3b8;
+
+  transition: all 0.3s ease;
+
+  font-size: 0.95rem;
+
+  font-weight: 500;
+}
+
+.nav-link:hover {
+  color: white;
+
+  background: rgba(255, 255, 255, 0.05);
+
+  transform: translateY(-2px);
+}
+
+.nav-active {
+  color: white;
+
+  background: linear-gradient(135deg,
+      rgba(56, 189, 248, 0.2),
+      rgba(129, 140, 248, 0.2));
+
+  border: 1px solid rgba(56, 189, 248, 0.3);
+
+  box-shadow:
+    0 0 20px rgba(56, 189, 248, 0.15);
+}
+
+/* ==========================
+   RESUME BUTTON
+========================== */
+
+.resume-btn {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  padding: 12px 22px;
+
+  border-radius: 999px;
+
+  text-decoration: none;
+
+  font-weight: 600;
+
+  color: white;
+
+  background: linear-gradient(135deg,
+      #38bdf8,
+      #818cf8);
+
+  transition: all 0.3s ease;
+}
+
+.resume-btn:hover {
+  transform: translateY(-3px);
+
+  box-shadow:
+    0 12px 30px rgba(56, 189, 248, 0.35);
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+.mobile-toggle {
+  display: none;
+
+  background: none;
+
+  border: none;
+
+  color: white;
+
+  font-size: 1.4rem;
+
+  cursor: pointer;
+}
+
+.mobile-nav {
+  display: none;
+}
+
+@media (max-width: 992px) {
+
+  .desktop-nav,
+  .resume-btn {
+    display: none;
+  }
+
+  .mobile-toggle {
+    display: block;
+  }
+
+  .mobile-nav {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+    padding: 20px;
+
+    backdrop-filter: blur(25px);
+
+    background: rgba(5, 8, 22, 0.95);
+  }
+
+  .mobile-link {
+    display: flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    text-decoration: none;
+
+    color: #cbd5e1;
+
+    padding: 14px;
+
+    border-radius: 12px;
+
+    transition: all 0.3s ease;
+  }
+
+  .mobile-link:hover {
+    background: rgba(255, 255, 255, 0.05);
+  }
+
+  .mobile-active {
+    color: white;
+
+    background: rgba(56, 189, 248, 0.15);
+  }
 }

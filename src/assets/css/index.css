@@ -3,10 +3,12 @@
 @tailwind utilities;
 
 @keyframes float-slow {
+
   0%,
   100% {
     transform: translateY(0) rotate(1deg);
   }
+
   50% {
     transform: translateY(-10px) rotate(-1deg);
   }
@@ -16,9 +18,11 @@
   0% {
     background-position: 0% 50%;
   }
+
   50% {
     background-position: 100% 50%;
   }
+
   100% {
     background-position: 0% 50%;
   }
@@ -93,10 +97,12 @@
 }
 
 @keyframes float {
+
   0%,
   100% {
     transform: translateY(0);
   }
+
   50% {
     transform: translateY(-20px);
   }
@@ -110,10 +116,12 @@
 }
 
 @keyframes blink {
+
   from,
   to {
     opacity: 1;
   }
+
   50% {
     opacity: 0;
   }
@@ -144,16 +152,6 @@ pre[class*="language-"] {
   color: #66e7ff !important;
 }
 
-/* Custom cursor interaction styles */
-.interactive-element {
-  transition: transform 0.3s ease;
-}
-
-.interactive-element:hover {
-  transform: translateY(-3px);
-  cursor: none; /* Hide default cursor */
-}
-
 .button-hover-effect {
   transition: all 0.3s ease;
   position: relative;
@@ -167,11 +165,9 @@ pre[class*="language-"] {
   height: 100%;
   top: 0;
   left: 0;
-  background: radial-gradient(
-    circle,
-    rgba(255, 255, 255, 0.2) 0%,
-    rgba(255, 255, 255, 0) 70%
-  );
+  background: radial-gradient(circle,
+      rgba(255, 255, 255, 0.2) 0%,
+      rgba(255, 255, 255, 0) 70%);
   transform: scale(0);
   transition: transform 0.5s ease;
 }
@@ -208,6 +204,7 @@ pre[class*="language-"] {
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
   }
+
   .dark {
     --background: 0 0% 3.9%;
     --foreground: 0 0% 98%;
@@ -236,16 +233,6 @@ pre[class*="language-"] {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    cursor: none; /* Hide default cursor for entire body */
-  }
-}
-
 /* Add these classes to adjust the grid colors in the top-left and bottom-right */
 .top-left-grid {
   background-color: white;
@@ -255,4 +242,29 @@ pre[class*="language-"] {
 .bottom-right-grid {
   background-color: white;
   opacity: 0.8;
+}
+
+body {
+  background: #050816;
+  color: #f8fafc;
+  overflow-x: hidden;
+}
+
+#root {
+  padding-top: 90px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+::selection {
+  background: rgba(34, 211, 238, 0.3);
+  color: white;
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
 }

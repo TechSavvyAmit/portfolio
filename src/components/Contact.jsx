@@ -101,25 +101,25 @@ export default function Contact() {
       icon: Mail,
       title: "Email",
       value: "nitkkr.amit07@gmail.com",
-      color: "purple",
+      href: "mailto:nitkkr.amit07@gmail.com",
     },
     {
       icon: Phone,
       title: "Phone",
       value: "+91 7042008251",
-      color: "blue",
+      href: "tel:+917042008251",
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "Faridabad, Haryana, 121004",
-      color: "pink",
+      value: "Faridabad, Haryana",
+      href: null,
     },
   ];
 
   return (
     <motion.main
-      className="pt-20 lg:pt-[0rem] bg-[#0f1629] text-white min-h-screen"
+      className="pt-20 lg:pt-[0rem] bg-[#0f1629] text-white min-h-screen py-20"
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       transition={{ duration: 0.5 }}
@@ -150,8 +150,8 @@ export default function Contact() {
           ))}
         </div>
 
-        <div className="container mx-auto">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+        <div className="max-w-[1400px] mx-auto px-8 lg:px-12 py-12">
+          <div className="grid lg:grid-cols-2 gap-16 items-center min-h-[80vh]">
             {/* Contact Info */}
             <motion.div
               className="space-y-8"
@@ -160,54 +160,60 @@ export default function Contact() {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <div>
-                <motion.h2
-                  className="text-4xl font-bold mb-4 bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent"
-                  whileHover={{ scale: 1.02 }}
-                >
-                  Let's Connect
-                </motion.h2>
-                <motion.p
-                  className="text-gray-300 text-lg"
-                  initial={{ opacity: 0 }}
-                  whileInView={{ opacity: 1 }}
-                  transition={{ delay: 0.2 }}
-                >
-                  Have a project in mind or want to discuss opportunities? I'd
-                  love to hear from you!
-                </motion.p>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-cyan-500/20 bg-cyan-500/5 mb-6">
+                <div className="w-2 h-2 rounded-full bg-cyan-400 animate-pulse" />
+                <span className="text-sm text-cyan-300">
+                  Open For Opportunities
+                </span>
               </div>
 
-              <div className="space-y-6">
+              <h2 className="text-5xl lg:text-6xl font-black leading-tight">
+                Let's Build
+                <span className="block bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 bg-clip-text text-transparent">
+                  Something Amazing
+                </span>
+              </h2>
+
+              <p className="mt-6 text-lg text-slate-400 max-w-xl leading-relaxed">
+                Whether you're looking for a Full Stack Developer,
+                discussing a new project, or exploring collaboration
+                opportunities, I'd be excited to connect and learn
+                more about your goals.
+              </p>
+
+              <div className="space-y-5">
                 {contactInfo.map((item, index) => (
-                  <motion.div
+                  <motion.a
                     key={item.title}
-                    className="flex items-center space-x-4 group"
-                    initial={{ opacity: 0, x: -20 }}
+                    href={item.href || "#"}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex items-center gap-5 p-5 rounded-2xl border border-slate-800 bg-slate-900/40 hover:border-cyan-500/40 transition-all duration-300 group"
+                    initial={{ opacity: 0, x: -30 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.1 * index }}
+                    transition={{ delay: index * 0.1 }}
                   >
-                    <div
-                      className={`bg-${item.color}-500/10 p-3 rounded-lg group-hover:bg-${item.color}-500/20 transition-colors`}
-                    >
-                      <item.icon
-                        className={`w-6 h-6 text-${item.color}-400 group-hover:text-${item.color}-300`}
-                      />
+                    <div className="w-14 h-14 rounded-2xl bg-cyan-500/10 flex items-center justify-center">
+                      <item.icon className="w-6 h-6 text-cyan-400" />
                     </div>
+
                     <div>
-                      <h3 className="font-semibold">{item.title}</h3>
-                      <p className="text-gray-400 group-hover:text-white transition-colors">
+                      <h4 className="font-semibold text-white">
+                        {item.title}
+                      </h4>
+
+                      <p className="text-slate-400 group-hover:text-slate-200 transition-colors">
                         {item.value}
                       </p>
                     </div>
-                  </motion.div>
+                  </motion.a>
                 ))}
               </div>
             </motion.div>
 
             {/* Contact Form */}
             <motion.div
-              className="backdrop-blur-lg bg-white/5 p-8 rounded-2xl shadow-xl relative overflow-hidden mt-20"
+              className="relative overflow-hidden rounded-3xl border border-slate-800 bg-slate-900/50 backdrop-blur-xl p-8 lg:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.4)]"
               initial={{ x: 50, opacity: 0 }}
               whileInView={{ x: 0, opacity: 1 }}
               transition={{ duration: 0.6 }}
@@ -228,11 +234,10 @@ export default function Contact() {
                         type={field.type}
                         name={field.name}
                         placeholder={field.label}
-                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                          errors[field.name]
-                            ? "border-red-500"
-                            : "border-gray-700 focus:border-blue-500"
-                        } focus:outline-none transition-colors`}
+                        className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors[field.name]
+                          ? "border-red-500"
+                          : "border-gray-700 focus:border-blue-500"
+                          } focus:outline-none transition-colors`}
                         value={formData[field.name]}
                         onChange={handleChange}
                       />
@@ -254,11 +259,10 @@ export default function Contact() {
                       name="message"
                       placeholder="Your Message"
                       rows="5"
-                      className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${
-                        errors.message
-                          ? "border-red-500"
-                          : "border-gray-700 focus:border-blue-500"
-                      } focus:outline-none transition-colors resize-none`}
+                      className={`w-full px-4 py-3 rounded-lg bg-white/5 border ${errors.message
+                        ? "border-red-500"
+                        : "border-gray-700 focus:border-blue-500"
+                        } focus:outline-none transition-colors resize-none`}
                       value={formData.message}
                       onChange={handleChange}
                     ></textarea>
@@ -348,11 +352,10 @@ export default function Contact() {
 
                 {status.type && (
                   <motion.div
-                    className={`p-3 rounded-lg flex items-center ${
-                      status.type === "success"
-                        ? "bg-green-900/30 text-green-400 border border-green-800"
-                        : "bg-red-900/30 text-red-400 border border-red-800"
-                    }`}
+                    className={`p-3 rounded-lg flex items-center ${status.type === "success"
+                      ? "bg-green-900/30 text-green-400 border border-green-800"
+                      : "bg-red-900/30 text-red-400 border border-red-800"
+                      }`}
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                   >
