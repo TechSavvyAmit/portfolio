@@ -92,9 +92,8 @@ export default function Header() {
               key={id}
               to={path}
               onClick={() => setActiveLink(id)}
-              className={`nav-link ${
-                activeLink === id ? "nav-active" : ""
-              }`}
+              className={`nav-link ${activeLink === id ? "nav-active" : ""
+                }`}
             >
               <Icon />
               <span>{text}</span>
@@ -105,7 +104,7 @@ export default function Header() {
         {/* Resume */}
 
         <a
-          href="/resume.pdf"
+          href="https://drive.google.com/file/d/1AU1kVTUveP9EL-3HBIX3x9ZolZUoMRbb/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="resume-btn"
@@ -134,9 +133,8 @@ export default function Header() {
                 setActiveLink(id);
                 setMobileMenu(false);
               }}
-              className={`mobile-link ${
-                activeLink === id ? "mobile-active" : ""
-              }`}
+              className={`mobile-link ${activeLink === id ? "mobile-active" : ""
+                }`}
             >
               <Icon />
               {text}
