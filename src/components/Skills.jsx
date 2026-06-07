@@ -390,12 +390,12 @@ const SkillsSection = () => {
               label: "DSA Problems",
             },
             {
-              value: "25+",
+              value: "22+",
               label: "Projects Built",
             },
             {
-              value: "2",
-              label: "Industry Roles",
+              value: "4",
+              label: "Professional Experiences",
             },
           ].map((item, index) => (
             <motion.div
