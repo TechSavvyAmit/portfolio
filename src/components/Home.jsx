@@ -1,7 +1,23 @@
-import React from 'react'
+// Home.jsx
 
-export default function Home() {
+import Hero from "./Hero";
+import Skills from "./Skills";
+import Experience from "./Experience";
+import Education from "./Education";
+import Projects from "./Projects";
+import ContactCTA from "./ContactCTA";
+
+function Home() {
   return (
-    <div>Home</div>
-  )
+    <>
+      <Hero />
+      <Skills />
+      <Experience />
+      <Education />
+      <Projects />
+      <ContactCTA />
+    </>
+  );
 }
+
+export default Home;
