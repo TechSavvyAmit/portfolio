@@ -1,4 +1,4 @@
-const API_URL = "http://localhost:5000/chat";
+const API_URL = "https://portfolio-3z86.onrender.com/chat";
 
 export const sendChatMessage = async (message) => {
     try {
