@@ -1,0 +1,26 @@
+[
+  {
+    "company": "Raja Software Labs",
+    "role": "Software Engineer",
+    "timeline": "May 2025 - Present",
+    "description": "Building backend systems, APIs, and automation solutions for smart-home and IoT platforms using Java and Spring Boot."
+  },
+  {
+    "company": "AIDEOA",
+    "role": "Full Stack Developer Intern",
+    "timeline": "Oct 2024 - Apr 2025",
+    "description": "Built responsive frontend interfaces and backend features using React, Node.js, Prisma, and modern web technologies."
+  },
+  {
+    "company": "Edunet Foundation",
+    "role": "Artificial Intelligence Intern",
+    "timeline": "Dec 2024 - Jan 2025",
+    "description": "Analyzed customer shopping trends using Python and data visualization tools to uncover actionable business insights."
+  },
+  {
+    "company": "Zeetron Networks",
+    "role": "Web Developer Intern",
+    "timeline": "Jan 2023 - Jun 2023",
+    "description": "Developed responsive web applications and interactive JavaScript-based tools with a focus on user experience."
+  }
+]

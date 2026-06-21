@@ -1,0 +1,129 @@
+[
+  {
+    "name": "ExpenseFlow",
+    "category": "System Design & Low Level Design",
+    "tech": [
+      "C++",
+      "SOLID Principles",
+      "Design Patterns",
+      "Low Level Design",
+      "System Design"
+    ],
+    "description": "Splitwise-inspired expense sharing platform supporting multiple expense splitting strategies, debt simplification, group management, settlements, and event-driven notifications using Strategy, Factory, Observer, and Singleton patterns.",
+    "highlights": [
+      "Applied SOLID principles",
+      "Implemented multiple design patterns",
+      "Built extensible and scalable architecture",
+      "Focused on real-world financial workflows"
+    ],
+    "github": "https://github.com/TechSavvyAmit/ExpenseFlow"
+  },
+  {
+    "name": "Coupon System",
+    "category": "Low Level Design",
+    "tech": [
+      "C++",
+      "OOP",
+      "SOLID Principles",
+      "Design Patterns"
+    ],
+    "description": "Scalable discount and pricing engine supporting dynamic coupon rules, extensible pricing workflows, and rule chaining for e-commerce applications.",
+    "highlights": [
+      "Strategy Pattern",
+      "Factory Pattern",
+      "Extensible architecture",
+      "E-commerce pricing engine"
+    ],
+    "github": "https://github.com/TechSavvyAmit/CouponSystem"
+  },
+  {
+    "name": "CloudStack Deploy",
+    "category": "Cloud & DevOps",
+    "tech": [
+      "AWS",
+      "Docker",
+      "ECS",
+      "ECR",
+      "Fargate",
+      "IAM",
+      "VPC",
+      "ALB"
+    ],
+    "description": "Designed and deployed containerized applications on AWS using modern cloud-native infrastructure and automated deployment workflows.",
+    "highlights": [
+      "Containerization with Docker",
+      "AWS ECS & Fargate",
+      "Infrastructure and networking",
+      "Production deployment practices"
+    ],
+    "github": "https://github.com/TechSavvyAmit/CloudStack-Deploy"
+  },
+  {
+    "name": "HackFusion",
+    "category": "Full Stack Development",
+    "tech": [
+      "Next.js",
+      "Node.js",
+      "SEO",
+      "Chatbot Integration"
+    ],
+    "description": "SEO-focused IT solutions platform that improved organic traffic and streamlined customer engagement through chatbot automation.",
+    "highlights": [
+      "SEO optimization",
+      "Performance improvements",
+      "Chatbot integration",
+      "Modern web architecture"
+    ]
+  },
+  {
+    "name": "FitHub",
+    "category": "Full Stack Development",
+    "tech": [
+      "React",
+      "Node.js",
+      "MongoDB"
+    ],
+    "description": "Fitness management platform featuring workout tracking, user authentication, and performance analytics.",
+    "highlights": [
+      "Authentication system",
+      "Workout management",
+      "Performance dashboards",
+      "Full-stack architecture"
+    ],
+    "github": "https://github.com/TechSavvyAmit/FitHub"
+  },
+  {
+    "name": "Chess Master",
+    "category": "Real-Time Applications",
+    "tech": [
+      "React",
+      "Node.js",
+      "WebSockets"
+    ],
+    "description": "Real-time multiplayer chess platform featuring matchmaking, live gameplay synchronization, and interactive user experience.",
+    "highlights": [
+      "WebSocket communication",
+      "Real-time multiplayer gameplay",
+      "Matchmaking system",
+      "Interactive UI"
+    ],
+    "github": "https://github.com/TechSavvyAmit/chess_master"
+  },
+  {
+    "name": "Algorithm Visualizer",
+    "category": "Data Structures & Algorithms",
+    "tech": [
+      "JavaScript",
+      "DSA",
+      "Visualization"
+    ],
+    "description": "Interactive visualization platform demonstrating sorting algorithms through animations and real-time execution.",
+    "highlights": [
+      "Algorithm visualization",
+      "Educational tool",
+      "Animation-based learning",
+      "DSA concepts"
+    ],
+    "github": "https://github.com/TechSavvyAmit/Sorting_Algo_Visualizer"
+  }
+]

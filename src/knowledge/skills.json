@@ -1,0 +1,89 @@
+{
+  "skills": {
+    "languages": [
+      "Java",
+      "JavaScript",
+      "TypeScript",
+      "Python",
+      "SQL",
+      "C++"
+    ],
+    "backend": [
+      "Spring Boot",
+      "Node.js",
+      "Express.js",
+      "REST APIs",
+      "JWT Authentication",
+      "Hibernate",
+      "Microservices"
+    ],
+    "frontend": [
+      "React",
+      "Next.js",
+      "Tailwind CSS",
+      "HTML",
+      "CSS",
+      "Responsive Design"
+    ],
+    "databases": [
+      "MongoDB",
+      "MySQL",
+      "Database Design",
+      "SQL Optimization"
+    ],
+    "cloudDevOps": [
+      "AWS",
+      "Docker",
+      "CI/CD",
+      "ECS",
+      "ECR",
+      "Fargate",
+      "IAM",
+      "VPC",
+      "Application Load Balancer (ALB)"
+    ],
+    "architecture": [
+      "System Design",
+      "High Level Design",
+      "Low Level Design",
+      "Object Oriented Programming",
+      "SOLID Principles",
+      "Design Patterns",
+      "Scalable Systems"
+    ],
+    "ai": [
+      "Prompt Engineering",
+      "LLM Fundamentals",
+      "RAG",
+      "Agentic AI"
+    ],
+    "tools": [
+      "Git",
+      "GitHub",
+      "Linux",
+      "Postman",
+      "VS Code"
+    ]
+  },
+  "topSkills": [
+    "Java",
+    "Spring Boot",
+    "React",
+    "Next.js",
+    "Node.js",
+    "Microservices",
+    "AWS",
+    "Docker",
+    "MongoDB",
+    "MySQL",
+    "REST APIs",
+    "System Design",
+    "CI/CD",
+    "Git",
+    "Linux",
+    "TypeScript",
+    "Prompt Engineering",
+    "RAG",
+    "Agentic AI"
+  ]
+}

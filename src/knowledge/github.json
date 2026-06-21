@@ -1,0 +1,21 @@
+{
+  "aiContext": {
+    "about": "Amit is a Software Engineer who enjoys building scalable web applications and backend systems.",
+    "careerGoal": "To become a highly skilled Software Engineer specializing in backend and full-stack development.",
+    "strengths": [
+      "Problem Solving",
+      "Data Structures and Algorithms",
+      "Backend Development",
+      "Full Stack Development",
+      "System Design"
+    ],
+    "interests": [
+      "Software Engineering",
+      "System Design",
+      "Artificial Intelligence",
+      "Web Development",
+      "Backend Development",
+      "Software Development"
+    ]
+  }
+}
