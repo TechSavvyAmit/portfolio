@@ -164,7 +164,7 @@ function AIChatbot() {
                                     fontSize: "14px",
                                 }}
                             >
-                                Querying Amit's knowledge base...
+                                Thinking...
                             </div>
                         )}
                     </div>
