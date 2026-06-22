@@ -104,7 +104,7 @@ export default function Header() {
         {/* Resume */}
 
         <a
-          href="https://drive.google.com/file/d/1AU1kVTUveP9EL-3HBIX3x9ZolZUoMRbb/view?usp=sharing"
+          href="https://drive.google.com/file/d/1clOorL_ydBn9jUlIjrAfhFnb9r7kBaxu/view?usp=sharing"
           target="_blank"
           rel="noreferrer"
           className="resume-btn"
